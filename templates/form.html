@@ -1,0 +1,14 @@
+{% extends '_layout.html' %}
+<!--Displays a greeting and a form asking if they are ready to begin the quiz-->
+{% block content %}
+    <h1>Forms Quiz</h1>
+    <hr>
+    <p>Hi {{name}}. Enter the number 9354</p>
+    <!--Form asking for a number-->
+    <form action="/results" method="POST">
+        <input type="text" name="number" id="number">
+        <input type="submit" value="Submit">
+    </form>
+
+
+{% endblock %}
