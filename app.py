@@ -5,6 +5,7 @@ app = Flask(__name__)
 correct_count = 0
 
 
+# GET requests at this URL will be handled by this function, but POST requests will not
 @app.get('/')
 def index():
     # reset the correct_count
@@ -13,6 +14,7 @@ def index():
     return render_template('index.html', correct_count=correct_count)
 
 
+# POST requests at this URL will be handled by this function
 @app.route('/form', methods=['POST'])
 def form():
     # store name from form so other functions can access it
@@ -21,6 +23,7 @@ def form():
     return render_template('form.html', name=name)
 
 
+# POST requests at this URL will be handled by this function, but not GET requests
 @app.post('/results')
 def results():
     global correct_count
