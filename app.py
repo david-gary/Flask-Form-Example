@@ -29,6 +29,7 @@ def results():
     global correct_count
     if request.form['number'] == '9354':
         correct_count += 1
+    # print(request.form['number'])
     return render_template('results.html', name=name, correct_count=correct_count)
 
 
